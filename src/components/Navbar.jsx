@@ -31,37 +31,37 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li className="text-2xl">
-        <NavLink
+      <li className="">
+        <NavLink to="/"> Home </NavLink>
+        {/* <NavLink
           to="/"
           className={({ isActive }) =>
             isActive ? "btn btn-accent btn-sm" : "btn btn-ghost btn-sm"
           }
         >
           Home
-        </NavLink>
+        </NavLink> */}
+      </li>
+      <li className="">
+        <NavLink to="/assignments"> All Assignment </NavLink>
       </li>
 
-      {/* {user && (
+      {user && (
         <>
-          <li className="text-2xl">
-            <NavLink to="/add"> Add Product </NavLink>
+          <li className="">
+            <NavLink to="/update"> Update Assignment </NavLink>
           </li>
-          <li className="text-2xl">
-            <NavLink to="/cart"> My Cart </NavLink>
+          <li className="">
+            <NavLink to=""> Submitted Assignment </NavLink>
+          </li>
+          <li className="">
+            <NavLink to=""> Results </NavLink>
           </li>
         </>
-      )} */}
+      )}
 
-      <li className="text-2xl">
-        <NavLink
-          to="/register"
-          className={({ isActive }) =>
-            isActive ? "btn btn-accent btn-sm" : "btn btn-ghost btn-sm"
-          }
-        >
-          Register
-        </NavLink>
+      <li className="">
+        <NavLink to="/register"> Register </NavLink>
       </li>
     </>
   );
@@ -102,8 +102,6 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
           <div className="navbar-end">
-
-
             {/* theme toggle button */}
             <button className="btn btn-circle btn-ghost">
               <label className="swap swap-rotate w-12 h-12">

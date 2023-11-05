@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CreateAssignment from "../pages/CreateAssignment";
 import PrivateRoute from "./PrivateRoute";
+import UpdateAssignment from "../pages/UpdateAssignment";
+import Assignments from "../pages/Assignments";
 
 
 const router = createBrowserRouter([
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: "/assignments",
+        element: <Assignments></Assignments>
+      },
+      {
         path: "/create",
         element: (
           <PrivateRoute>
@@ -34,10 +40,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      //   {
-      //     path: "/products/:brand",
-      //     element: <Products></Products>,
-      //   },
+      {
+        path: "/update",
+        element: (
+          <PrivateRoute>
+            <UpdateAssignment></UpdateAssignment>
+          </PrivateRoute>
+        ),
+      },
+      
       //   {
       //     path: "/update/:id",
       //     element: (
@@ -79,10 +90,6 @@ const router = createBrowserRouter([
       //       </PrivateRoute>
       //     ),
       //     loader: () => fetch("https://brand-shop-server-rose.vercel.app/cart"),
-      //   },
-      //   {
-      //     path: "/contact",
-      //     element: <Contact></Contact>,
       //   },
     ],
   },

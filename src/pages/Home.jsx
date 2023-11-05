@@ -8,7 +8,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row lg:py-16 px-6 gap-10">
           <div className="flex-1 flex flex-col justify-between py-14  ">
             <h1 className=" text-4xl md:text-4xl lg:text-7xl font-bold text-start">
-              ONLINE STUDY <span className="text-accent">GROUP</span>
+              ONLINE STUDY <span className="">GROUP</span>
             </h1>
             <p className="text-justify my-5 max-w-[65ch]">
               An online group study website is a virtual platform designed to

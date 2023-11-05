@@ -6,10 +6,8 @@ const Footer = () => {
     <Container>
       <footer className="footer p-10 bg-base-100 text-base-content">
         <div>
-          <h1 className="text-3xl text-accent font-bold mb-2">
-            Online Group Study
-          </h1>
-          <p className="lg:w-[600px]">
+          <h1 className="text-3xl font-bold mb-2">Online Group Study</h1>
+          <p className="lg:w-[600px] md:text-justify">
             An online group study website is a virtual platform designed to
             facilitate collaborative learning and study sessions among students
             or individuals with common educational goals. It typically offers
@@ -18,11 +16,6 @@ const Footer = () => {
             accountability while providing a flexible and accessible environment
             for productive group study sessions.
           </p>
-          {/* <div className="flex gap-5 text-3xl text-accent mt-5">
-            <GrFacebook className="cursor-pointer" />
-            <GrLinkedin className="cursor-pointer" />
-            <GrTwitter className="cursor-pointer" />
-          </div> */}
         </div>
         <nav>
           <div className="space-y-4">
@@ -84,7 +77,7 @@ const Footer = () => {
             <p className="font-medium">Sector-7,Uttra, Dhaka 1212.</p>
             <p className="font-medium">+019 123 456 78</p>
             <p className="font-medium">info@cleanco.com</p>
-            <div className="flex gap-5 text-3xl text-accent">
+            <div className="flex gap-5 text-3xl">
               <GrFacebook className="cursor-pointer" />
               <GrLinkedin className="cursor-pointer" />
               <GrTwitter className="cursor-pointer" />
@@ -92,9 +85,11 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <p className=" text-center mt-6 mb-10">
-        Copyright © 2023 Clean Co. | Powered by Clean Co.
-      </p>
+      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+        <aside>
+          <p>Copyright © 2023 Clean Co. | Powered by Clean Co.</p>
+        </aside>
+      </footer>
     </Container>
   );
 };
