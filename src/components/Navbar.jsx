@@ -68,7 +68,7 @@ const Navbar = () => {
   return (
     <Container>
       <div className="sticky inset-0 z-20 ">
-        <div className="navbar md:px-5 lg:px-10 glass ">
+        <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -95,16 +95,17 @@ const Navbar = () => {
               </ul>
             </div>
             <NavLink to="/">
-              {/* <img className=" w-24 md:w-40" src="/img/logo.png" alt="" /> */}
-              <p>study</p>
+              <img className=" w-24 md:w-40" src="/img/logo.png" alt="" />
             </NavLink>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
           <div className="navbar-end">
+
+
             {/* theme toggle button */}
-            <button className="btn btn-square btn-ghost">
+            <button className="btn btn-circle btn-ghost">
               <label className="swap swap-rotate w-12 h-12">
                 <input
                   type="checkbox"
@@ -118,72 +119,66 @@ const Navbar = () => {
                 <HiMoon className="w-8 h-8 swap-off" />
               </label>
             </button>
-            {/* user Avatar */}
-            <div className="dropdown dropdown-end">
-              <label
-                tabIndex={0}
-                className={`avatar btn btn-ghost btn-circle 
-              ${user ? "online" : "offline"} md:mx-3`}
-              >
-                <div className=" w-10 md:w-12 rounded-full">
-                  {user ? (
-                    <img src={user.photoURL} />
-                  ) : (
-                    <>
-                      <img
-                        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                        alt=""
-                      />
-                    </>
-                  )}
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  {user ? (
-                    <>
-                      <p>{user.displayName}</p>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </li>
-                <li>
-                  {user ? (
-                    <>
-                      <p>{user.email}</p>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </li>
-                <li>
-                  {user ? (
-                    <>
-                      <a onClick={handleLogOut}>Logout</a>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </li>
-              </ul>
-            </div>
 
             {user ? (
               <>
-                <button
-                  onClick={handleLogOut}
-                  className="btn btn-sm md:btn-md btn-outline"
-                >
-                  Logout
-                </button>
+                {/* user Avatar */}
+                <div className="dropdown dropdown-end">
+                  <label
+                    tabIndex={0}
+                    className={`avatar btn btn-ghost btn-circle 
+              ${user ? "online" : "offline"} md:mx-3`}
+                  >
+                    <div className=" w-10 rounded-full">
+                      {user ? (
+                        <img src={user.photoURL} />
+                      ) : (
+                        <>
+                          {/* <img
+                            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                            alt=""
+                          /> */}
+                        </>
+                      )}
+                    </div>
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      {user ? (
+                        <>
+                          <p>{user.displayName}</p>
+                        </>
+                      ) : (
+                        ""
+                      )}
+                    </li>
+                    <li>
+                      {user ? (
+                        <>
+                          <p>{user.email}</p>
+                        </>
+                      ) : (
+                        ""
+                      )}
+                    </li>
+                    <li>
+                      {user ? (
+                        <>
+                          <a onClick={handleLogOut}>Logout</a>
+                        </>
+                      ) : (
+                        ""
+                      )}
+                    </li>
+                  </ul>
+                </div>
               </>
             ) : (
               <Link to="/login">
-                <button className="btn btn-sm md:btn-md btn-outline">
+                <button className="btn btn-sm md:btn-sm btn-outline">
                   Login
                 </button>
               </Link>
