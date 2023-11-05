@@ -1,11 +1,14 @@
 import { GrFacebook, GrTwitter, GrLinkedin } from "react-icons/gr";
+import Container from "./Container";
 
 const Footer = () => {
   return (
-    <div>
+    <Container>
       <footer className="footer p-10 bg-base-300 text-base-content">
         <div>
-          <h1 className="text-3xl text-accent font-bold mb-2">Online Group Study</h1>
+          <h1 className="text-3xl text-accent font-bold mb-2">
+            Online Group Study
+          </h1>
           <p className="lg:w-[600px]">
             An online group study website is a virtual platform designed to
             facilitate collaborative learning and study sessions among students
@@ -92,7 +95,7 @@ const Footer = () => {
       <p className=" text-center mt-6 mb-10">
         Copyright © 2023 Clean Co. | Powered by Clean Co.
       </p>
-    </div>
+    </Container>
   );
 };
 
