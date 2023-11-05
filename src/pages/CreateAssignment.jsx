@@ -1,7 +1,11 @@
 import swal from "sweetalert";
 import Container from "../components/Container";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
 
 const CreateAssignment = () => {
+  const [date, setDate] = useState(new Date());
   const handleAddAssignment = (event) => {
     event.preventDefault();
 
@@ -9,7 +13,7 @@ const CreateAssignment = () => {
     const name = form.name.value;
     const marks = form.marks.value;
     const category = form.category.value;
-    const date = form.date.value;
+    // const date = form.date.value;
     const description = form.description.value;
     const image = form.image.value;
     const level = form.level.value;
@@ -43,6 +47,7 @@ const CreateAssignment = () => {
 
     //    form.reset();
   };
+
 
   return (
     <Container>
@@ -95,18 +100,25 @@ const CreateAssignment = () => {
                 />
               </label>
             </div>
-            <div className="form-control md:w-1/2">
-              <label className="label">
-                <span className="label-text">Date</span>
-              </label>
-              <label className="input-group">
-                <input
+            <div className="md:w-1/2">
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Date</span>
+                </label>
+                <label className="input-group">
+                  <DatePicker
+                    selected={date}
+                    onChange={(date) => setDate(date)}
+                    className="input input-bordered w-full"
+                  />
+                  {/* <input
                   type="date"
                   name="date"
                   placeholder=""
                   className="input input-bordered w-full"
-                />
-              </label>
+                /> */}
+                </label>
+              </div>
             </div>
           </div>
           {/* 3 */}
@@ -131,7 +143,7 @@ const CreateAssignment = () => {
                     Assignment Difficulty Level
                   </span>
                 </label>
-                <select name="level" className="select select-bordered  w-full">
+                <select name="level" className="select select-bordered w-full">
                   <option disabled selected>
                     Pick one
                   </option>

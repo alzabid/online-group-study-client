@@ -8,6 +8,7 @@ import CreateAssignment from "../pages/CreateAssignment";
 import PrivateRoute from "./PrivateRoute";
 import UpdateAssignment from "../pages/UpdateAssignment";
 import Assignments from "../pages/Assignments";
+import Details from "../pages/Details";
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/assignments",
-        element: <Assignments></Assignments>
+        element: <Assignments></Assignments>,
+        loader: () => fetch("http://localhost:5000/assignments"),
       },
       {
         path: "/create",
@@ -48,7 +50,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      
+      {
+        path: "/details/:id",
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/assignments/${params.id}`),
+      },
+
       //   {
       //     path: "/update/:id",
       //     element: (
@@ -62,18 +74,6 @@ const router = createBrowserRouter([
       //       ),
       //   },
 
-      //   {
-      //     path: "/details/:id",
-      //     element: (
-      //       <PrivateRoute>
-      //         <Details></Details>
-      //       </PrivateRoute>
-      //     ),
-      //     loader: ({ params }) =>
-      //       fetch(
-      //         `https://brand-shop-server-rose.vercel.app/products/${params.id}`
-      //       ),
-      //   },
       //   {
       //     path: "/add",
       //     element: (
