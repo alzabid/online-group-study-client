@@ -14,7 +14,7 @@ const CreateAssignment = () => {
     event.preventDefault();
 
     const form = event.target;
-    const name = form.name.value;
+    const title = form.title.value;
     const marks = form.marks.value;
     const category = form.category.value;
     // const date = form.date.value;
@@ -24,7 +24,7 @@ const CreateAssignment = () => {
     const email = user?.email;
 
     const newAssignment = {
-      name,
+      title,
       email,
       marks,
       category,
@@ -93,13 +93,13 @@ const CreateAssignment = () => {
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text">Subject Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="category"
-                  placeholder="Category"
+                  placeholder="Subject Name"
                   className="input input-bordered w-full"
                 />
               </label>

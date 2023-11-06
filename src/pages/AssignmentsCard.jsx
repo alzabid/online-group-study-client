@@ -11,8 +11,9 @@ import {
 import { Link } from "react-router-dom";
 
 const AssignmentsCard = ({ element }) => {
-  const { _id, name, marks, category, date, description, image, level } = element;
-  console.log(name, marks, category, date, description, image, level);
+  const { _id, title, marks, category, date, description, image, level } =
+    element;
+  console.log(title, marks, category, date, description, image, level);
 
   return (
     <div>
@@ -28,7 +29,7 @@ const AssignmentsCard = ({ element }) => {
         <CardBody>
           <Typography variant="h4" color="blue-gray">
             <div className="flex justify-between items-center ">
-              <h2 className="card-title"> {name}</h2>
+              <h2 className="card-title"> {title}</h2>
               <div className="badge badge-lg badge-warning badge-outline">
                 {level}
               </div>

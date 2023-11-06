@@ -8,9 +8,9 @@ const Details = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const assignments = useLoaderData();
-  const { name, marks, category, date, description, image, level } =
+  const { title, marks, category, date, description, image, level } =
     assignments;
-  console.log(name, marks, category, date, description, image, level);
+  console.log(title, marks, category, date, description, image, level);
 
   const handleSubmitAssignment = (event) => {
     event.preventDefault();
@@ -19,8 +19,18 @@ const Details = () => {
     const link = form.link.value;
     const note = form.note.value;
     const email = user?.email;
+    const name = user?.displayName;
 
-    const newAssignment = { link, note, email, name, marks, image, category };
+    const newAssignment = {
+      link,
+      note,
+      email,
+      name,
+      title,
+      marks,
+      image,
+      category,
+    };
     console.log(newAssignment);
     // send data to server
     fetch("http://localhost:5000/submits", {
@@ -37,7 +47,7 @@ const Details = () => {
           swal("Good job!", "successfully submitted assignment!", "success");
         }
       });
-       form.reset();
+    form.reset();
   };
 
   return (
@@ -47,7 +57,7 @@ const Details = () => {
           <img className="w-[400px]" src={image} alt="Album" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Name: {name}</h2>
+          <h2 className="card-title">Title: {title}</h2>
           <p>Submitted Date : {date}</p>
           <p>Total Marks : {marks}</p>
           <p>{description}</p>
@@ -103,12 +113,7 @@ const Details = () => {
                     ></textarea>
                   </div>
                   <div className="modal-action">
-                    <input
-                      type="submit"
-                      method="dialog"
-                      value="Submit"
-                      className="btn"
-                    />
+                    <input type="submit" value="Submit" className="btn" />
                   </div>
                 </div>
               </dialog>
