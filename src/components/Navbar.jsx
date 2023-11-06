@@ -49,10 +49,7 @@ const Navbar = () => {
       {user && (
         <>
           <li className="">
-            <NavLink to="/update"> Update Assignment </NavLink>
-          </li>
-          <li className="">
-            <NavLink to=""> Submitted Assignment </NavLink>
+            <NavLink to="/submits"> Submitted Assignment </NavLink>
           </li>
           <li className="">
             <NavLink to=""> Results </NavLink>

@@ -3,8 +3,12 @@ import Container from "../components/Container";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const CreateAssignment = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const [date, setDate] = useState(new Date());
   const handleAddAssignment = (event) => {
     event.preventDefault();
@@ -17,9 +21,11 @@ const CreateAssignment = () => {
     const description = form.description.value;
     const image = form.image.value;
     const level = form.level.value;
+    const email = user?.email;
 
     const newAssignment = {
       name,
+      email,
       marks,
       category,
       date,
@@ -41,13 +47,11 @@ const CreateAssignment = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          swal("Good job!", "successfully added product!", "success");
+          swal("Good job!", "successfully added an assignment!", "success");
         }
       });
-
     //    form.reset();
   };
-
 
   return (
     <Container>
@@ -56,7 +60,7 @@ const CreateAssignment = () => {
           Create an Assignment
         </h2>
         <form onSubmit={handleAddAssignment}>
-          {/* 1 */}
+          {/* row 1 */}
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -85,7 +89,7 @@ const CreateAssignment = () => {
               </label>
             </div>
           </div>
-          {/* 2 */}
+          {/* row 2 */}
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -121,7 +125,7 @@ const CreateAssignment = () => {
               </div>
             </div>
           </div>
-          {/* 3 */}
+          {/* row 3 */}
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -154,7 +158,7 @@ const CreateAssignment = () => {
               </div>
             </div>
           </div>
-          {/* 4 */}
+          {/* row 4 */}
           <div className="mb-8">
             <div className="form-control w-full">
               <label className="label">

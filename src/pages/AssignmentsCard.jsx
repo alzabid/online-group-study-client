@@ -40,13 +40,21 @@ const AssignmentsCard = ({ element }) => {
             <p> Subject Name : {category}</p>
           </Typography>
         </CardBody>
-        <CardFooter className="flex items-center justify-end">
+        <CardFooter className="flex items-center justify-between">
+          <Link to={`/update/${_id}`}>
+            <Button
+              variant="text"
+              className="flex items-center gap-2 btn-warning"
+            >
+              Update
+            </Button>
+          </Link>
           <Link to={`/details/${_id}`}>
             <Button
               variant="text"
               className="flex items-center gap-2 btn-warning"
             >
-              Learn More
+              View Assignment
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

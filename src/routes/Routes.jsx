@@ -9,7 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateAssignment from "../pages/UpdateAssignment";
 import Assignments from "../pages/Assignments";
 import Details from "../pages/Details";
-
+import SubmittedAssignment from "../pages/SubmittedAssignment";
 
 const router = createBrowserRouter([
   {
@@ -43,12 +43,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/update",
+        path: "/update/:id",
         element: (
           <PrivateRoute>
             <UpdateAssignment></UpdateAssignment>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/assignments/${params.id}`),
       },
       {
         path: "/details/:id",
@@ -60,42 +62,16 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/assignments/${params.id}`),
       },
-
-      //   {
-      //     path: "/update/:id",
-      //     element: (
-      //       <PrivateRoute>
-      //         <UpdateItem></UpdateItem>
-      //       </PrivateRoute>
-      //     ),
-      //     loader: ({ params }) =>
-      //       fetch(
-      //         `https://brand-shop-server-rose.vercel.app/products/${params.id}`
-      //       ),
-      //   },
-
-      //   {
-      //     path: "/add",
-      //     element: (
-      //       <PrivateRoute>
-      //         <AddProduct></AddProduct>
-      //       </PrivateRoute>
-      //     ),
-      //   },
-      //   {
-      //     path: "/cart",
-      //     element: (
-      //       <PrivateRoute>
-      //         <Cart></Cart>
-      //       </PrivateRoute>
-      //     ),
-      //     loader: () => fetch("https://brand-shop-server-rose.vercel.app/cart"),
-      //   },
+      {
+        path: "/submits",
+        element: (
+          <PrivateRoute>
+            <SubmittedAssignment></SubmittedAssignment>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
-   
-
-
 
 export default router;
