@@ -52,7 +52,7 @@ const Navbar = () => {
             <NavLink to="/submits"> Submitted Assignment </NavLink>
           </li>
           <li className="">
-            <NavLink to=""> Results </NavLink>
+            <NavLink to="/mysubmits"> My Assignment </NavLink>
           </li>
         </>
       )}

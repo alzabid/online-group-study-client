@@ -85,9 +85,9 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+      <footer className="footer footer-center p-4 text-base-content">
         <aside>
-          <p>Copyright © 2023 Clean Co. | Powered by Clean Co.</p>
+          <p>Copyright © 2023 Online Study Group | Powered by Online Study Ltd.</p>
         </aside>
       </footer>
     </Container>

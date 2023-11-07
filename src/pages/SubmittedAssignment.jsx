@@ -1,15 +1,16 @@
-import { useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
 import { useState } from "react";
 import { useEffect } from "react";
 import Container from "../components/Container";
 import { Link } from "react-router-dom";
 
 const SubmittedAssignment = () => {
-  const { user } = useContext(AuthContext);
   const [submits, setSubmits] = useState([]);
+  const [currentData, setCurrentData] = useState({});
+  const [newMarks, setNewMarks] = useState("");
+  const [feedback, setFeedback] = useState("");
+  console.log(newMarks, feedback);
 
-  const url = `http://localhost:5000/submits?email=${user?.email}`;
+  const url = "http://localhost:5000/submits";
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -17,6 +18,12 @@ const SubmittedAssignment = () => {
   }, [url]);
 
   const handleConfirm = (id) => {
+    // event.preventDefault();
+    // const form = event.target;
+    // const newMarks = form.newMarks.value;
+    // const feedback = form.feedback.value;
+    // console.log(newMarks, feedback);
+
     fetch(`http://localhost:5000/submits/${id}`, {
       method: "PATCH",
       headers: {
@@ -31,7 +38,10 @@ const SubmittedAssignment = () => {
           // update state
           const remaining = submits.filter((submit) => submit._id !== id);
           const updated = submits.find((submit) => submit._id === id);
+
           updated.status = "confirm";
+          updated.newMarks = newMarks;
+          updated.feedback = feedback;
           const newSubmits = [updated, ...remaining];
           setSubmits(newSubmits);
         }
@@ -42,7 +52,7 @@ const SubmittedAssignment = () => {
     <div>
       <Container>
         <h2 className="md:text-3xl text-center font-semibold py-10">
-          Your Submitted Assignment: {submits.length}
+          Total Submitted Assignment: {submits.length}
         </h2>
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
@@ -81,7 +91,7 @@ const SubmittedAssignment = () => {
                         </button>
                       ) : (
                         <button className="btn btn-warning btn-xs">
-                          Pending
+                          Pending.....
                         </button>
                       )}
                     </th>
@@ -90,12 +100,15 @@ const SubmittedAssignment = () => {
 
                       {submit.status !== "confirm" && (
                         <button
-                          onClick={() =>
-                            document.getElementById("my_modal_5").showModal()
-                          }
+                          onClick={() => {
+                            setCurrentData(submit);
+                            window.document
+                              .getElementById("my_modal_5")
+                              .showModal();
+                          }}
                           className="btn btn-primary btn-xs"
                         >
-                          Give Mark
+                          Give Marks
                         </button>
                       )}
                       <dialog
@@ -103,29 +116,31 @@ const SubmittedAssignment = () => {
                         className="modal modal-bottom sm:modal-middle"
                       >
                         <div className="modal-box">
+                          <h3 className="mb-5">
+                            Pdf Link :
+                            <Link
+                              className="link text-primary"
+                              to={currentData.link}
+                            >
+                              {currentData.link}
+                            </Link>
+                          </h3>
+                          <h3 className="mb-10  text-justify">
+                            Note :{" "}
+                            <span className="text-xs">{currentData.note}</span>
+                          </h3>
+
                           <div className="form-control w-full">
-                            <h3 className="mb-5">
-                              Pdf Link :
-                              <Link
-                                className="link text-primary"
-                                to={submit.link}
-                              >
-                                {submit.link}
-                              </Link>
-                            </h3>
-                            <h3 className="mb-10  text-justify">
-                              Note :{" "}
-                              <span className="text-xs">{submit.note}</span>
-                            </h3>
                             <label className="label">
                               <span className="label-text"> Give Marks </span>
                             </label>
                             <input
-                              name="link"
+                              onChange={(e) => setNewMarks(e.target.value)}
+                              name="newMarks"
                               type="text"
                               className="input input-bordered w-full"
                               placeholder=" Give Marks"
-                              defaultValue={submit.marks}
+                              defaultValue={currentData.marks}
                             />
                           </div>
                           <div className="form-control">
@@ -133,14 +148,16 @@ const SubmittedAssignment = () => {
                               <span className="label-text"> Feedback </span>
                             </label>
                             <textarea
-                              name="note"
+                              onChange={(e) => setFeedback(e.target.value)}
+                              name="feedback"
                               className="textarea textarea-bordered h-24"
                               placeholder="Give feedback..."
                             ></textarea>
                           </div>
+
                           <div className="modal-action">
                             <input
-                              onClick={() => handleConfirm(submit._id)}
+                              onClick={() => handleConfirm(currentData._id)}
                               type="submit"
                               value="Submit"
                               className="btn"

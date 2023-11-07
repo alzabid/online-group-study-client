@@ -64,7 +64,7 @@ const Details = () => {
           <div className="card-actions justify-end">
             {/* Open the modal */}
             <Button
-              onClick={() => document.getElementById("my_modal_5").showModal()}
+              onClick={() => document.getElementById("my_modal_1").showModal()}
               variant="text"
               className="flex items-center gap-2 btn-warning"
             >
@@ -84,40 +84,37 @@ const Details = () => {
                 />
               </svg>
             </Button>
-            <form onSubmit={handleSubmitAssignment}>
-              <dialog
-                id="my_modal_5"
-                className="modal modal-bottom sm:modal-middle"
-              >
-                <div className="modal-box">
-                  <h3 className="font-bold text-lg">Total Marks : {marks}</h3>
-                  <div className="form-control w-full">
-                    <label className="label">
-                      <span className="label-text"></span>
-                    </label>
-                    <input
-                      name="link"
-                      type="text"
-                      className="input input-bordered w-full"
-                      placeholder="Your Assignment Pdf link here..."
-                    />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text"></span>
-                    </label>
-                    <textarea
-                      name="note"
-                      className="textarea textarea-bordered h-24"
-                      placeholder="Write a short note about your Assignment..."
-                    ></textarea>
-                  </div>
-                  <div className="modal-action">
-                    <input type="submit" value="Submit" className="btn" />
-                  </div>
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Total Marks : {marks}</h3>
+                <div className="">
+                  <form onSubmit={handleSubmitAssignment} method="dialog">
+                    <div className="form-control w-full">
+                      <label className="label">
+                        <span className="label-text"></span>
+                      </label>
+                      <input
+                        name="link"
+                        type="text"
+                        className="input input-bordered w-full"
+                        placeholder="Your Assignment Pdf link here..."
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text"></span>
+                      </label>
+                      <textarea
+                        name="note"
+                        className="textarea textarea-bordered h-24"
+                        placeholder="Write a short note about your Assignment..."
+                      ></textarea>
+                    </div>
+                    <input type="submit" value="Submit" className="btn mt-5 w-full" />
+                  </form>
                 </div>
-              </dialog>
-            </form>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>
