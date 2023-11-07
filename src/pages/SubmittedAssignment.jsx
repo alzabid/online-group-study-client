@@ -18,18 +18,14 @@ const SubmittedAssignment = () => {
   }, [url]);
 
   const handleConfirm = (id) => {
-    // event.preventDefault();
-    // const form = event.target;
-    // const newMarks = form.newMarks.value;
-    // const feedback = form.feedback.value;
-    // console.log(newMarks, feedback);
+    
 
     fetch(`http://localhost:5000/submits/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ status: "confirm" }),
+      body: JSON.stringify({ status: "confirm", newMarks, feedback }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -111,10 +107,7 @@ const SubmittedAssignment = () => {
                           Give Marks
                         </button>
                       )}
-                      <dialog
-                        id="my_modal_5"
-                        className="modal modal-bottom sm:modal-middle"
-                      >
+                      <dialog id="my_modal_5" className="modal sm:modal-middle">
                         <div className="modal-box">
                           <h3 className="mb-5">
                             Pdf Link :
@@ -160,7 +153,7 @@ const SubmittedAssignment = () => {
                               onClick={() => handleConfirm(currentData._id)}
                               type="submit"
                               value="Submit"
-                              className="btn"
+                              className="btn btn-sm md:btn-md"
                             />
                           </div>
                         </div>

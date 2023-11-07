@@ -8,16 +8,20 @@ import {
   CardHeader,
   Typography,
 } from "@material-tailwind/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
-const AssignmentsCard = ({ element }) => {
-  const { _id, title, marks, category, date, description, image, level } =
-    element;
-  console.log(title, marks, category, date, description, image, level);
+const AssignmentsCard = ({ element, handleDelete }) => {
+  const { user } = useContext(AuthContext);
+
+  const { _id, title, marks, category, date, image, level } = element;
+ 
+   const formateDate= date.slice(0,10)
 
   return (
     <div>
-      <Card className="h-[500px] overflow-hidden">
+      <Card className="h-[600px] overflow-hidden">
         <CardHeader
           floated={false}
           shadow={false}
@@ -28,32 +32,43 @@ const AssignmentsCard = ({ element }) => {
         </CardHeader>
         <CardBody>
           <Typography variant="h4" color="blue-gray">
+            <h2 className="card-title"> {title}</h2>
+          </Typography>
+          <Typography variant="lead" color="gray" className="mt-3 font-normal">
             <div className="flex justify-between items-center ">
-              <h2 className="card-title"> {title}</h2>
-              <div className="badge badge-lg badge-warning badge-outline">
+              <p>Total Marks: {marks}</p>
+              <div className="badge badge-lg badge-primary badge-outline">
                 {level}
               </div>
             </div>
-          </Typography>
-          <Typography variant="lead" color="gray" className="mt-3 font-normal">
-            <p>Total Marks: {marks}</p>
-            <p> Submitted Date : {date}</p>
+            <p> Submitted Date : {formateDate}</p>
             <p> Subject Name : {category}</p>
           </Typography>
         </CardBody>
-        <CardFooter className="flex items-center justify-between">
-          <Link to={`/update/${_id}`}>
+        <CardFooter className=" flex flex-col gap-5">
+          <div className="flex items-center justify-between">
+            <Link to={`/update/${_id}`}>
+              <Button
+                // disabled={user?.email !== element?.email}
+                variant="text"
+                className="flex items-center gap-2 btn-accent"
+              >
+                Update
+              </Button>
+            </Link>
             <Button
+              disabled={user?.email !== element?.email}
+              onClick={() => handleDelete(_id)}
               variant="text"
               className="flex items-center gap-2 btn-warning"
             >
-              Update
+              Delete
             </Button>
-          </Link>
+          </div>
           <Link to={`/details/${_id}`}>
             <Button
               variant="text"
-              className="flex items-center gap-2 btn-warning"
+              className="flex items-center justify-between gap-2  border border-black w-full"
             >
               View Assignment
               <svg

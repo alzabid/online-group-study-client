@@ -6,7 +6,7 @@ const Footer = () => {
     <Container>
       <footer className="footer p-10 bg-base-100 text-base-content">
         <div>
-          <h1 className="text-3xl font-bold mb-2">Online Group Study</h1>
+          <img className="w-48 mb-5" src="/img/logo.png" alt="" />
           <p className="lg:w-[600px] md:text-justify">
             An online group study website is a virtual platform designed to
             facilitate collaborative learning and study sessions among students
@@ -21,13 +21,13 @@ const Footer = () => {
           <div className="space-y-4">
             <h1 className="text-xl font-bold mb-2">Navigations</h1>
             <div className="flex items-center gap-2">
-              <div className="bg-accent w-4 h-4 rounded-full grid place-content-center">
+              <div className="bg-black w-4 h-4 rounded-full grid place-content-center">
                 <div className="bg-white w-2 h-2 rounded-full"></div>
               </div>
               <p className="cursor-pointer hover:underline font-medium">FAQs</p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-accent w-4 h-4 rounded-full grid place-content-center">
+              <div className="bg-black w-4 h-4 rounded-full grid place-content-center">
                 <div className="bg-white w-2 h-2 rounded-full"></div>
               </div>
               <p className="cursor-pointer hover:underline font-medium">
@@ -35,7 +35,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-accent w-4 h-4 rounded-full grid place-content-center">
+              <div className="bg-black w-4 h-4 rounded-full grid place-content-center">
                 <div className="bg-white w-2 h-2 rounded-full"></div>
               </div>
               <p className="cursor-pointer hover:underline font-medium">
@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h1 className="text-xl font-bold mb-2">Company</h1>
             <div className="flex items-center gap-2">
-              <div className="bg-accent w-4 h-4 rounded-full grid place-content-center">
+              <div className="bg-black w-4 h-4 rounded-full grid place-content-center">
                 <div className="bg-white w-2 h-2 rounded-full"></div>
               </div>
               <p className="cursor-pointer hover:underline font-medium">
@@ -56,13 +56,13 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-accent w-4 h-4 rounded-full grid place-content-center">
+              <div className="bg-black w-4 h-4 rounded-full grid place-content-center">
                 <div className="bg-white w-2 h-2 rounded-full"></div>
               </div>
               <p className="cursor-pointer hover:underline font-medium">Team</p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-accent w-4 h-4 rounded-full grid place-content-center">
+              <div className="bg-black w-4 h-4 rounded-full grid place-content-center">
                 <div className="bg-white w-2 h-2 rounded-full"></div>
               </div>
               <p className="cursor-pointer hover:underline font-medium">

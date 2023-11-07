@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import Features from "../components/Features";
 
 
 const Home = () => {
@@ -27,7 +28,6 @@ const Home = () => {
                 Explore More
               </Link>
             </div>
-            {/* <div className="divider"></div> */}
           </div>
           <div className="h-[600px] w-ful flex-1 overflow-hidden ">
             <img
@@ -37,6 +37,7 @@ const Home = () => {
             />
           </div>
         </div>
+        <Features></Features>
       </Container>
     );
 };

@@ -75,10 +75,10 @@ const MySubmit = () => {
 
                       <dialog
                         id="my_modal_1"
-                        className="modal modal-bottom sm:modal-middle"
+                        className="modal"
                       >
                         <div className="modal-box">
-                          <h3 className="mb-5">
+                          <h3 className="text-xl mb-5">
                             Your Marks: {currentData.newMarks}
                           </h3>
                           <h3 className="mb-10  text-justify">
@@ -86,7 +86,7 @@ const MySubmit = () => {
                           </h3>
                           <div className="modal-action">
                             <form method="dialog">
-                              <button className="btn">Close</button>
+                              <button className="btn btn-sm md:btn-md">Close</button>
                             </form>
                           </div>
                         </div>

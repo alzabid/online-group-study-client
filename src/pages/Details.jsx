@@ -49,6 +49,17 @@ const Details = () => {
       });
     form.reset();
   };
+  const handleTakeAssignment = () => {
+    const now = Date.now();
+     
+    if(new Date(date).getTime()<now){
+      swal("Error!", " Submit Deadline End, try another Assignment", "error");
+    }
+    else{
+      document.getElementById("my_modal_1").showModal();
+
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-6 md:mx-10 lg:mx-auto py-10">
@@ -64,7 +75,7 @@ const Details = () => {
           <div className="card-actions justify-end">
             {/* Open the modal */}
             <Button
-              onClick={() => document.getElementById("my_modal_1").showModal()}
+              onClick={handleTakeAssignment}
               variant="text"
               className="flex items-center gap-2 btn-warning"
             >
@@ -110,7 +121,11 @@ const Details = () => {
                         placeholder="Write a short note about your Assignment..."
                       ></textarea>
                     </div>
-                    <input type="submit" value="Submit" className="btn mt-5 w-full" />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      className="btn mt-5 w-full"
+                    />
                   </form>
                 </div>
               </div>
