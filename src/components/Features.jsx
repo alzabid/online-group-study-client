@@ -42,7 +42,7 @@ const Features = () => {
                  {/* card heading */}
                  <div className="mb-8">
                    <h3 className="mb-1.5 text-xl font-semibold text-neutral-darkBlue">
-                     Published any Assignment
+                    Publish Your Assignment
                    </h3>
                    <p className="text-sm leading-6 tracking-wide text-neutral-darkBlue opacity-50">
                      Scans our talent network to create the optimal team for
@@ -59,7 +59,7 @@ const Features = () => {
                  {/* card heading */}
                  <div className="mb-8">
                    <h3 className="mb-1.5 text-xl font-semibold text-neutral-darkBlue">
-                    Result
+                    Get Result Your Assignment
                    </h3>
                    <p className="text-sm leading-6 tracking-wide text-neutral-darkBlue opacity-50">
                      Regularly evaluates our talent to ensure quality
@@ -76,7 +76,7 @@ const Features = () => {
                    {/* card heading */}
                    <div className="mb-8">
                      <h3 className="mb-1.5 text-xl font-semibold text-neutral-darkBlue">
-                       Submit your Assignment
+                       Submit Your Assignment
                      </h3>
                      <p className="text-sm leading-6 tracking-wide text-neutral-darkBlue opacity-50">
                        Uses data from past projects to provide better delivery

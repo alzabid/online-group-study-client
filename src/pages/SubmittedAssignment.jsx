@@ -10,12 +10,12 @@ const SubmittedAssignment = () => {
   const [feedback, setFeedback] = useState("");
   console.log(newMarks, feedback);
 
-  const url = "http://localhost:5000/submits";
+  
   useEffect(() => {
-    fetch(url)
+    fetch("http://localhost:5000/submits")
       .then((res) => res.json())
       .then((data) => setSubmits(data));
-  }, [url]);
+  }, []);
 
   const handleConfirm = (id) => {
     

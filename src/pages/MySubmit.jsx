@@ -9,7 +9,7 @@ const MySubmit = () => {
 
   const url = `http://localhost:5000/mysubmits?email=${user?.email}`;
   useEffect(() => {
-    fetch(url)
+    fetch(url, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setSubmits(data));
   }, [url]);
@@ -73,10 +73,7 @@ const MySubmit = () => {
                         See Marks
                       </button>
 
-                      <dialog
-                        id="my_modal_1"
-                        className="modal"
-                      >
+                      <dialog id="my_modal_1" className="modal">
                         <div className="modal-box">
                           <h3 className="text-xl mb-5">
                             Your Marks: {currentData.newMarks}
@@ -86,7 +83,9 @@ const MySubmit = () => {
                           </h3>
                           <div className="modal-action">
                             <form method="dialog">
-                              <button className="btn btn-sm md:btn-md">Close</button>
+                              <button className="btn btn-sm md:btn-md">
+                                Close
+                              </button>
                             </form>
                           </div>
                         </div>

@@ -1,5 +1,5 @@
 {
-  "name": "online-group-study-a11",
+  "name": "online-group-study-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material-tailwind/html": "^2.0.0",
     "@material-tailwind/react": "^2.1.4",
-    "aos": "^2.3.4",
+    "axios": "^1.6.0",
     "firebase": "^10.5.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -19,7 +20,6 @@
     "react-datepicker": "^4.21.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
-    "react-pdf": "^7.5.1",
     "react-router-dom": "^6.18.0",
     "sort-by": "^1.2.0",
     "sweetalert": "^2.1.2",
