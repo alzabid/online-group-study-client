@@ -7,9 +7,9 @@ const Assignments = () => {
   const [assignments, setAssignments] = useState([]);
   const [selectLevel, setSelectLevel] = useState("All");
 
-  const url = "http://localhost:5000/assignments";
+  const url = "https://online-group-study-server-beta.vercel.app/assignments";
   useEffect(() => {
-    // const url = "http://localhost:5000/assignments";
+    // const url = "https://online-group-study-server-beta.vercel.app/assignments";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAssignments(data));
@@ -31,9 +31,12 @@ const Assignments = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/assignments/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://online-group-study-server-beta.vercel.app/assignments/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -69,7 +72,9 @@ const Assignments = () => {
         </div>
         {filterItem.length === 0 ? (
           <div className=" h-[80vh] flex justify-center items-center">
-            <p className="md:text-2xl">No Assignment found for the selected level.</p>
+            <p className="md:text-2xl">
+              No Assignment found for the selected level.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-10">

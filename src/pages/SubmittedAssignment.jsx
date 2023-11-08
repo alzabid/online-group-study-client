@@ -10,17 +10,14 @@ const SubmittedAssignment = () => {
   const [feedback, setFeedback] = useState("");
   console.log(newMarks, feedback);
 
-  
   useEffect(() => {
-    fetch("http://localhost:5000/submits")
+    fetch("https://online-group-study-server-beta.vercel.app/submits")
       .then((res) => res.json())
       .then((data) => setSubmits(data));
   }, []);
 
   const handleConfirm = (id) => {
-    
-
-    fetch(`http://localhost:5000/submits/${id}`, {
+    fetch(`https://online-group-study-server-beta.vercel.app/submits/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -12,7 +12,6 @@ import {
 } from "firebase/auth";
 import axios from "axios";
 
-
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
@@ -57,18 +56,25 @@ const AuthProvider = ({ children }) => {
       // if user exists then issue a token
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            "https://online-group-study-server-beta.vercel.app/jwt",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
             console.log("token response", res.data);
           });
-      }
-       else {
+      } else {
         axios
-          .post("http://localhost:5000/logout", loggedUser, {
-            withCredentials: true,
-          })
+          .post(
+            "https://online-group-study-server-beta.vercel.app/logout",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
             console.log(res.data);
           });

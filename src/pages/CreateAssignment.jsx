@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
-
 const CreateAssignment = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
@@ -37,7 +36,7 @@ const CreateAssignment = () => {
     console.log(newAssignment);
 
     // send data to server
-    fetch("http://localhost:5000/assignments", {
+    fetch("https://online-group-study-server-beta.vercel.app/assignments", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,7 +50,7 @@ const CreateAssignment = () => {
           swal("Good job!", "successfully added an assignment!", "success");
         }
       });
-       form.reset();
+    form.reset();
   };
 
   return (

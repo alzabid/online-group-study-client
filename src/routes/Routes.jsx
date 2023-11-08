@@ -50,7 +50,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/assignments/${params.id}`),
+          fetch(
+            `https://online-group-study-server-beta.vercel.app/assignments/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
@@ -60,7 +62,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/assignments/${params.id}`),
+          fetch(
+            `https://online-group-study-server-beta.vercel.app/assignments/${params.id}`
+          ),
       },
       {
         path: "/submits",

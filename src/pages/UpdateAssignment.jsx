@@ -39,13 +39,16 @@ const UpdateAssignment = () => {
     console.log(newAssignment);
 
     // send data to server
-    fetch(`http://localhost:5000/assignments/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newAssignment),
-    })
+    fetch(
+      `https://online-group-study-server-beta.vercel.app/assignments/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newAssignment),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -5,14 +5,14 @@ import { AuthContext } from "../providers/AuthProvider";
 import swal from "sweetalert";
 
 const Details = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   console.log(user);
   const assignments = useLoaderData();
   const { title, marks, category, date, description, image, level } =
     assignments;
   console.log(title, marks, category, date, description, image, level);
-   const formateDate = date.slice(0, 10);
+  const formateDate = date.slice(0, 10);
 
   const handleSubmitAssignment = (event) => {
     event.preventDefault();
@@ -35,7 +35,7 @@ const Details = () => {
     };
     console.log(newAssignment);
     // send data to server
-    fetch("http://localhost:5000/submits", {
+    fetch("https://online-group-study-server-beta.vercel.app/submits", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -54,13 +54,11 @@ const Details = () => {
   };
   const handleTakeAssignment = () => {
     const now = Date.now();
-     
-    if(new Date(date).getTime()<now){
-      swal("Error!", " Submit Deadline End, try another Assignment", "error");
-    }
-    else{
-      document.getElementById("my_modal_1").showModal();
 
+    if (new Date(date).getTime() < now) {
+      swal("Error!", " Submit Deadline End, try another Assignment", "error");
+    } else {
+      document.getElementById("my_modal_1").showModal();
     }
   };
 

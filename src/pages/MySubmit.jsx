@@ -7,7 +7,7 @@ const MySubmit = () => {
   const [submits, setSubmits] = useState([]);
   const [currentData, setCurrentData] = useState({});
 
-  const url = `http://localhost:5000/mysubmits?email=${user?.email}`;
+  const url = `https://online-group-study-server-beta.vercel.app/mysubmits?email=${user?.email}`;
   useEffect(() => {
     fetch(url, { credentials: "include" })
       .then((res) => res.json())

@@ -1,4 +1,4 @@
-## Live link: 
+## Live link: https://online-group-study-a11.web.app/
 
 # Project Features:
 - Navbar: Here user can navigate other routes and view user profile.
