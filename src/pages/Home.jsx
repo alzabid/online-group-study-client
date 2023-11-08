@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Features from "../components/Features";
+import Faq from "../components/Faq";
 
 
 const Home = () => {
@@ -38,6 +39,7 @@ const Home = () => {
           </div>
         </div>
         <Features></Features>
+        <Faq></Faq>
       </Container>
     );
 };

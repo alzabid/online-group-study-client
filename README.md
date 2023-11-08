@@ -1,8 +1,18 @@
-# React + Vite
+## Live link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Features:
+- Navbar: Here user can navigate other routes and view user profile.
+- Banner section.
+- Feature Section: Here user can see our features.
+- FAQ Section: Here some common ques will be show.
+- All Assignment Page: Here user can see all posted assignments and user can see assignment details by clicking view assignment button.
+- Details Page: Here user can see details and submit the assignment bt clicking take assignment button.
+- Submitted Assignment Page: Here user can see all users submitted assignments.
+- My Assignment page : Here user can see their submitted assignments. Also see their results and feedback.
+- Our Website has email-passward base login and register an account. User can also login with Gooogle.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#  Technology:
+- React.
+- Firebase.
+- JWT.
+- Mongodb.

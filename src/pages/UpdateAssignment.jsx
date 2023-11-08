@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import Container from "../components/Container";
 import { AuthContext } from "../providers/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 const UpdateAssignment = () => {
+  const navigate = useNavigate();
   const assignments = useLoaderData();
-  const { _id, name, marks, category, date, description, image, level } = assignments;
+  const { _id, title, marks, category, date, description, image, level } =
+    assignments;
 
   const { user } = useContext(AuthContext);
   console.log(user);
@@ -15,7 +17,7 @@ const UpdateAssignment = () => {
     event.preventDefault();
 
     const form = event.target;
-    const name = form.name.value;
+    const title = form.title.value;
     const marks = form.marks.value;
     const category = form.category.value;
     const date = form.date.value;
@@ -25,7 +27,7 @@ const UpdateAssignment = () => {
     const email = user?.email;
 
     const newAssignment = {
-      name,
+      title,
       email,
       marks,
       category,
@@ -49,10 +51,9 @@ const UpdateAssignment = () => {
         console.log(data);
         if (data.modifiedCount > 0) {
           swal("Good job!", "successfully Updated Assignment!", "success");
+          navigate("/assignments");
         }
       });
-
-    //    form.reset();
   };
   return (
     <Container>
@@ -69,9 +70,9 @@ const UpdateAssignment = () => {
               </label>
               <label className="input-group">
                 <input
-                  defaultValue={name}
+                  defaultValue={title}
                   type="text"
-                  name="name"
+                  name="title"
                   placeholder="Assignment Title"
                   className="input input-bordered w-full"
                 />
@@ -96,14 +97,14 @@ const UpdateAssignment = () => {
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text">Subject Name</span>
               </label>
               <label className="input-group">
                 <input
                   defaultValue={category}
                   type="text"
                   name="category"
-                  placeholder="Category"
+                  placeholder="Subject Name"
                   className="input input-bordered w-full"
                 />
               </label>

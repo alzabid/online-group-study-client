@@ -1,16 +1,18 @@
 import { Button } from "@material-tailwind/react";
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import swal from "sweetalert";
 
 const Details = () => {
+   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   console.log(user);
   const assignments = useLoaderData();
   const { title, marks, category, date, description, image, level } =
     assignments;
   console.log(title, marks, category, date, description, image, level);
+   const formateDate = date.slice(0, 10);
 
   const handleSubmitAssignment = (event) => {
     event.preventDefault();
@@ -45,6 +47,7 @@ const Details = () => {
         console.log(data);
         if (data.insertedId) {
           swal("Good job!", "successfully submitted assignment!", "success");
+          navigate("/submits");
         }
       });
     form.reset();
@@ -62,14 +65,14 @@ const Details = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-6 md:mx-10 lg:mx-auto py-10">
-      <div className="card h-[500px] lg:card-side bg-base-100 shadow-xl">
+    <div className="max-w-3xl mx-6 md:mx-10 lg:mx-auto py-10">
+      <div className="bg-base-100 shadow-xl">
         <figure>
-          <img className="w-[400px]" src={image} alt="Album" />
+          <img className="" src={image} alt="Album" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Title: {title}</h2>
-          <p>Submitted Date : {date}</p>
+          <p>Submission Date : {formateDate}</p>
           <p>Total Marks : {marks}</p>
           <p>{description}</p>
           <div className="card-actions justify-end">
@@ -124,7 +127,7 @@ const Details = () => {
                     <input
                       type="submit"
                       value="Submit"
-                      className="btn mt-5 w-full"
+                      className="btn mt-5 btn-outline w-full"
                     />
                   </form>
                 </div>

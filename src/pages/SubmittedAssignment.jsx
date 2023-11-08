@@ -120,12 +120,12 @@ const SubmittedAssignment = () => {
                           </h3>
                           <h3 className="mb-10  text-justify">
                             Note :{" "}
-                            <span className="text-xs">{currentData.note}</span>
+                            <span className="">{currentData.note}</span>
                           </h3>
 
                           <div className="form-control w-full">
                             <label className="label">
-                              <span className="label-text"> Give Marks </span>
+                              <span className="label-text"> Give Marks  </span>
                             </label>
                             <input
                               onChange={(e) => setNewMarks(e.target.value)}
@@ -133,7 +133,7 @@ const SubmittedAssignment = () => {
                               type="text"
                               className="input input-bordered w-full"
                               placeholder=" Give Marks"
-                              defaultValue={currentData.marks}
+                              // defaultValue={currentData.marks}
                             />
                           </div>
                           <div className="form-control">
@@ -144,7 +144,7 @@ const SubmittedAssignment = () => {
                               onChange={(e) => setFeedback(e.target.value)}
                               name="feedback"
                               className="textarea textarea-bordered h-24"
-                              placeholder="Give feedback..."
+                              placeholder="feedback..."
                             ></textarea>
                           </div>
 

@@ -41,8 +41,8 @@ const AssignmentsCard = ({ element, handleDelete }) => {
                 {level}
               </div>
             </div>
-            <p> Submitted Date : {formateDate}</p>
             <p> Subject Name : {category}</p>
+            <p> Submission Date : {formateDate}</p>
           </Typography>
         </CardBody>
         <CardFooter className=" flex flex-col gap-5">

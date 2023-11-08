@@ -50,7 +50,7 @@ const CreateAssignment = () => {
           swal("Good job!", "successfully added an assignment!", "success");
         }
       });
-    //    form.reset();
+       form.reset();
   };
 
   return (
@@ -69,7 +69,7 @@ const CreateAssignment = () => {
               <label className="input-group">
                 <input
                   type="text"
-                  name="name"
+                  name="title"
                   placeholder="Assignment Title"
                   className="input input-bordered w-full"
                 />
@@ -175,7 +175,7 @@ const CreateAssignment = () => {
             </div>
           </div>
           <div className=" flex justify-center items-center mb-8">
-            <input type="submit" value="Add" className="btn btn-outline w-44" />
+            <input type="submit" value="Create" className="btn btn-outline w-44" />
           </div>
         </form>
       </div>

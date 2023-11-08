@@ -63,27 +63,29 @@ const MySubmit = () => {
                     <th>
                       {/* Open the modal */}
 
-                      <button
-                        onClick={() => {
-                          setCurrentData(submit);
-                          document.getElementById("my_modal_1").showModal();
-                        }}
-                        className="btn btn-primary btn-xs"
-                      >
-                        See Marks
-                      </button>
+                      {submit.status === "confirm" && (
+                        <button
+                          onClick={() => {
+                            setCurrentData(submit);
+                            document.getElementById("my_modal_1").showModal();
+                          }}
+                          className="btn btn-primary btn-xs"
+                        >
+                          See Marks
+                        </button>
+                      )}
 
                       <dialog id="my_modal_1" className="modal">
                         <div className="modal-box">
                           <h3 className="text-xl mb-5">
                             Your Marks: {currentData.newMarks}
                           </h3>
-                          <h3 className="mb-10  text-justify">
+                          <h3 className="mb-10 text-xl  text-justify">
                             Feedback : {currentData.feedback}
                           </h3>
                           <div className="modal-action">
                             <form method="dialog">
-                              <button className="btn btn-sm md:btn-md">
+                              <button className="btn btn-outline btn-sm md:btn-md">
                                 Close
                               </button>
                             </form>
