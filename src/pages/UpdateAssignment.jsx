@@ -57,7 +57,7 @@ const UpdateAssignment = () => {
   };
   return (
     <Container>
-      <div className="bg-base-100 px-6 md:px-10 lg:px-52 py-10">
+      <div className="bg-[#F8F8F8] px-6 md:px-10 lg:px-52 py-10">
         <h2 className="text-3xl text-center  font-extrabold mb-5">
           Update an Assignment
         </h2>

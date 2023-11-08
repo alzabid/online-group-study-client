@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
+
 const CreateAssignment = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
@@ -55,7 +56,7 @@ const CreateAssignment = () => {
 
   return (
     <Container>
-      <div className="bg-base-100 px-6 md:px-10 lg:px-52 py-10">
+      <div className="bg-[#F8F8F8] px-6 md:px-10 lg:px-52 py-10">
         <h2 className="text-3xl text-center  font-extrabold mb-5">
           Create an Assignment
         </h2>
@@ -175,7 +176,11 @@ const CreateAssignment = () => {
             </div>
           </div>
           <div className=" flex justify-center items-center mb-8">
-            <input type="submit" value="Create" className="btn btn-outline w-44" />
+            <input
+              type="submit"
+              value="Create"
+              className="btn btn-outline w-44"
+            />
           </div>
         </form>
       </div>

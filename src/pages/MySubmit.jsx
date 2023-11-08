@@ -14,7 +14,7 @@ const MySubmit = () => {
       .then((data) => setSubmits(data));
   }, [url]);
   return (
-    <div>
+    <div className="h-[80vh]">
       <Container>
         <h2 className="md:text-3xl text-center font-semibold py-10">
           Your Submitted Assignment: {submits.length}

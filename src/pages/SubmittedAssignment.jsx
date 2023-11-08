@@ -45,7 +45,7 @@ const SubmittedAssignment = () => {
   };
 
   return (
-    <div>
+    <div className="h-[80vh]">
       <Container>
         <h2 className="md:text-3xl text-center font-semibold py-10">
           Total Submitted Assignment: {submits.length}
@@ -119,13 +119,12 @@ const SubmittedAssignment = () => {
                             </Link>
                           </h3>
                           <h3 className="mb-10  text-justify">
-                            Note :{" "}
-                            <span className="">{currentData.note}</span>
+                            Note : <span className="">{currentData.note}</span>
                           </h3>
 
                           <div className="form-control w-full">
                             <label className="label">
-                              <span className="label-text"> Give Marks  </span>
+                              <span className="label-text"> Give Marks </span>
                             </label>
                             <input
                               onChange={(e) => setNewMarks(e.target.value)}
