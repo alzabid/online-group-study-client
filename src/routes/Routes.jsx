@@ -66,7 +66,26 @@ const router = createBrowserRouter([
             `https://online-group-study-server-beta.vercel.app/assignments/${params.id}`
           ),
       },
-      {
+      // {
+      //   path: "/submits",
+      //   element: (
+      //     <PrivateRoute>
+      //       <SubmittedAssignment></SubmittedAssignment>
+      //     </PrivateRoute>
+      //   ),
+      // },
+      // {
+      //   path: "/mysubmits",
+      //   element: (
+      //     <PrivateRoute>
+      //       <MySubmit></MySubmit>
+      //     </PrivateRoute>
+      //   ),
+      // },
+    ],
+  },
+  
+  {
         path: "/submits",
         element: (
           <PrivateRoute>
@@ -82,8 +101,6 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-    ],
-  },
 ]);
 
 export default router;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Container from "../components/Container";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const SubmittedAssignment = () => {
   const [submits, setSubmits] = useState([]);
@@ -11,7 +12,7 @@ const SubmittedAssignment = () => {
   console.log(newMarks, feedback);
 
   useEffect(() => {
-    fetch("https://online-group-study-server-beta.vercel.app/submits")
+    fetch("https://online-group-study-server-beta.vercel.app/submits", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setSubmits(data));
   }, []);
@@ -39,11 +40,14 @@ const SubmittedAssignment = () => {
           setSubmits(newSubmits);
         }
       });
+
+      
   };
 
   return (
-    <div className="h-[80vh]">
+    
       <Container>
+        <Navbar></Navbar>
         <h2 className="md:text-3xl text-center font-semibold py-10">
           Total Submitted Assignment: {submits.length}
         </h2>
@@ -106,6 +110,12 @@ const SubmittedAssignment = () => {
                       )}
                       <dialog id="my_modal_5" className="modal sm:modal-middle">
                         <div className="modal-box">
+                          <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                              ✕
+                            </button>
+                          </form>
                           <h3 className="mb-5">
                             Pdf Link :
                             <Link
@@ -162,7 +172,7 @@ const SubmittedAssignment = () => {
           </table>
         </div>
       </Container>
-    </div>
+    
   );
 };
 

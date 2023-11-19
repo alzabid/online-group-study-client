@@ -85,7 +85,8 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <footer className="footer footer-center p-4 text-base-content">
+     
+      <footer className="footer footer-center p-4 bg-base-200 text-base-content">
         <aside>
           <p>Copyright © 2023 Online Study Group | Powered by Online Study Ltd.</p>
         </aside>

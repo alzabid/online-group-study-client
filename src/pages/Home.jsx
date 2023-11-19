@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Features from "../components/Features";
 import Faq from "../components/Faq";
+import Title from "../components/Title";
 
 
 const Home = () => {
@@ -9,9 +10,7 @@ const Home = () => {
       <Container>
         <div className="flex flex-col md:flex-row lg:py-16 px-6 gap-10">
           <div className="flex-1 flex flex-col justify-between py-14  ">
-            <h1 className=" text-4xl md:text-4xl lg:text-7xl font-bold text-start">
-              ONLINE STUDY <span className="">GROUP</span>
-            </h1>
+            <Title>Online Group Study</Title>
             <p className="text-justify my-5 max-w-[65ch]">
               An online group study website is a virtual platform designed to
               facilitate collaborative learning and study sessions among

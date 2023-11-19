@@ -66,27 +66,27 @@ const CreateAssignment = () => {
               <label className="label">
                 <span className="label-text">Assignment Title</span>
               </label>
-              <label className="input-group">
+              
                 <input
                   type="text"
                   name="title"
                   placeholder="Assignment Title"
                   className="input input-bordered w-full"
                 />
-              </label>
+            
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
                 <span className="label-text">Assignment Marks</span>
               </label>
-              <label className="input-group">
+              
                 <input
-                  type="text"
+                  type="number"
                   name="marks"
                   placeholder="Assignment Marks"
                   className="input input-bordered w-full"
                 />
-              </label>
+            
             </div>
           </div>
           {/* row 2 */}
@@ -95,21 +95,21 @@ const CreateAssignment = () => {
               <label className="label">
                 <span className="label-text">Subject Name</span>
               </label>
-              <label className="input-group">
+              
                 <input
                   type="text"
                   name="category"
                   placeholder="Subject Name"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
             <div className="md:w-1/2">
-              <div className="form-control w-full">
+              <div className="form-control w-1/2">
                 <label className="label">
                   <span className="label-text">Date</span>
                 </label>
-                <label className="input-group">
+                
                   <DatePicker
                     selected={date}
                     onChange={(date) => setDate(date)}
@@ -121,7 +121,7 @@ const CreateAssignment = () => {
                   placeholder=""
                   className="input input-bordered w-full"
                 /> */}
-                </label>
+              
               </div>
             </div>
           </div>
@@ -129,13 +129,13 @@ const CreateAssignment = () => {
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Assignment Description</span>
+                <span className="label-text">Thumbnail Image URL</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="description"
-                  placeholder="Assignment Description"
+                  name="image"
+                  placeholder="Thumbnail Image URL"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -162,18 +162,20 @@ const CreateAssignment = () => {
           <div className="mb-8">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">Thumbnail Image URL</span>
+                <span className="label-text">Assignment Description</span>
               </label>
-              <label className="input-group">
+              
                 <input
                   type="text"
-                  name="image"
-                  placeholder="Thumbnail Image URL"
+                  name="description"
+                  placeholder="Assignment Description"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
           </div>
+          
+
           <div className=" flex justify-center items-center mb-8">
             <input
               type="submit"

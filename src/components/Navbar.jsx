@@ -95,7 +95,7 @@ const Navbar = () => {
               </ul>
             </div>
             <NavLink to="/">
-              <img className=" w-24 md:w-40" src="/img/logo.png" alt="" />
+              <img className=" w-28 md:w-40" src="/img/logo.png" alt="" />
             </NavLink>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -121,23 +121,14 @@ const Navbar = () => {
             {user ? (
               <>
                 {/* user Avatar */}
-                <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-hover dropdown-end">
                   <label
                     tabIndex={0}
                     className={`avatar btn btn-ghost btn-circle 
               ${user ? "online" : "offline"} md:mx-3`}
                   >
                     <div className=" w-10 rounded-full">
-                      {user ? (
-                        <img src={user.photoURL} />
-                      ) : (
-                        <>
-                          {/* <img
-                            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                            alt=""
-                          /> */}
-                        </>
-                      )}
+                      <img src={user.photoURL} />
                     </div>
                   </label>
                   <ul
@@ -145,31 +136,13 @@ const Navbar = () => {
                     className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                   >
                     <li>
-                      {user ? (
-                        <>
-                          <p>{user.displayName}</p>
-                        </>
-                      ) : (
-                        ""
-                      )}
+                      <p>{user.displayName}</p>
                     </li>
                     <li>
-                      {user ? (
-                        <>
-                          <p>{user.email}</p>
-                        </>
-                      ) : (
-                        ""
-                      )}
+                      <p>{user.email}</p>
                     </li>
                     <li>
-                      {user ? (
-                        <>
-                          <a onClick={handleLogOut}>Logout</a>
-                        </>
-                      ) : (
-                        ""
-                      )}
+                      <a onClick={handleLogOut}>Logout</a>
                     </li>
                   </ul>
                 </div>

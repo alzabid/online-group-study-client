@@ -71,7 +71,7 @@ const UpdateAssignment = () => {
               <label className="label">
                 <span className="label-text">Assignment Title</span>
               </label>
-              <label className="input-group">
+              
                 <input
                   defaultValue={title}
                   type="text"
@@ -79,21 +79,21 @@ const UpdateAssignment = () => {
                   placeholder="Assignment Title"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
                 <span className="label-text">Assignment Marks</span>
               </label>
-              <label className="input-group">
+              
                 <input
                   defaultValue={marks}
-                  type="text"
+                  type="number"
                   name="marks"
                   placeholder="Assignment Marks"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
           </div>
           {/* row 2 */}
@@ -102,7 +102,7 @@ const UpdateAssignment = () => {
               <label className="label">
                 <span className="label-text">Subject Name</span>
               </label>
-              <label className="input-group">
+              
                 <input
                   defaultValue={category}
                   type="text"
@@ -110,14 +110,14 @@ const UpdateAssignment = () => {
                   placeholder="Subject Name"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
             <div className="md:w-1/2">
               <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text">Date</span>
                 </label>
-                <label className="input-group">
+                
                   <input
                     defaultValue={date}
                     type="date"
@@ -125,7 +125,7 @@ const UpdateAssignment = () => {
                     placeholder=""
                     className="input input-bordered w-full"
                   />
-                </label>
+
               </div>
             </div>
           </div>
@@ -133,17 +133,17 @@ const UpdateAssignment = () => {
           <div className="md:flex gap-4 md:mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Assignment Description</span>
+                <span className="label-text">Thumbnail Image URL</span>
               </label>
-              <label className="input-group">
+              
                 <input
-                  defaultValue={description}
+                  defaultValue={image}
                   type="text"
-                  name="description"
-                  placeholder="Assignment Description"
+                  name="image"
+                  placeholder="Thumbnail Image URL"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
             <div className="md:w-1/2">
               <div className="form-control w-full">
@@ -171,17 +171,17 @@ const UpdateAssignment = () => {
           <div className="mb-8">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">Thumbnail Image URL</span>
+                <span className="label-text">Assignment Description</span>
               </label>
-              <label className="input-group">
+              
                 <input
-                  defaultValue={image}
+                  defaultValue={description}
                   type="text"
-                  name="image"
-                  placeholder="Thumbnail Image URL"
+                  name="description"
+                  placeholder="Assignment Description"
                   className="input input-bordered w-full"
                 />
-              </label>
+              
             </div>
           </div>
           <div className=" flex justify-center items-center mb-8">
