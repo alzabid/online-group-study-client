@@ -1,5 +1,4 @@
-## Live link: https://online-group-study-a11.web.app
-
+## Live link: https://fancy-head.surge.sh
 # Project Features:
 - Navbar: Here user can navigate other routes and view user profile.
 - Banner section.
